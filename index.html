@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Explore SA Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="home">
+
+  <header class="site-header">
+    <div class="container nav-flex">
+      <div class="logo">Explore<span>SA</span> Events</div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Discover the Heart of South Africa</h1>
+      <p>From Table Mountain to Kruger Park &mdash; your adventure starts here.</p>
+      <a href="events.html" class="btn btn-primary">Explore Events</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Why Explore SA?</h2>
+        <p>Explore SA connects locals and tourists to the best activities, attractions and festivals across Mzansi.</p>
+
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55e5?q=80&w=600" alt="Cape Town attractions including Table Mountain">
+            <div class="card-body">
+              <h3>Iconic Attractions</h3>
+              <p>Visit Table Mountain, Robben Island, and the Cradle of Humankind.</p>
+              <button class="btn toggleBtn" data-target="info1" type="button">Show More</button>
+              <p id="info1" class="hidden">We partner with local tour guides to give you an authentic experience.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=600" alt="South African culture festival">
+            <div class="card-body">
+              <h3>Cultural Festivals</h3>
+              <p>Experience Jazz, Diwali, AfrikaBurn and more vibrant festivals.</p>
+              <button class="btn toggleBtn" data-target="info2" type="button">Show More</button>
+              <p id="info2" class="hidden">All our festivals celebrate South Africa's diverse heritage.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?q=80&w=600" alt="South African landscape at sunset">
+            <div class="card-body">
+              <h3>Natural Beauty</h3>
+              <p>Explore the landscapes, wildlife and coastlines that make South Africa unique.</p>
+              <button class="btn toggleBtn" data-target="info3" type="button">Show More</button>
+              <p id="info3" class="hidden">From the Drakensberg to the Garden Route, there's always somewhere new to discover.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <h2>Featured Slideshow</h2>
+        <div class="slideshow" id="slideshow">
+          <div class="slide"><img src="https://images.unsplash.com/photo-1576485290814-1c72c0e5d217?q=80&w=800" alt="Cape Town city view"></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?q=80&w=800" alt="Durban beachfront"></div>
+          <div class="slide"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55e5?q=80&w=800" alt="Table Mountain"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
+      <p id="dateTime"></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
