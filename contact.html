@@ -1,69 +1,85 @@
 <!DOCTYPE html>
-<htnl leng="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width=device-width, initial scale=1.0">
-        <title>ExploraSA Events- Home|Discover South Africa </title>
-        <link rel="stylesheet" href="css/sty;e.css">
-    </head>
-    <body id="home">
-        <header>
-            <div class="container nav-flex">
-                <div class="logo">Explora<span>SA</spanE>Events</div>
-                    <nav><ul>
-                        <li><a href="index.html"class="active">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="event.html">Events</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html" >Contact us</a></li>   
-                    </ul></nav>
-            </div>
-        </header>
+<html leng="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial scale=1.0">
+    <title>Contact Us - Explore SA Events </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-        <div class="hero">
-            <div class="container">
-                <h1>Discoover the haert o South Africa</h1>
-                <p>From Table Mountain to Kruger park - Your advanture starts here</p>
-                <a href="event.html" class="btn">Explora Event</a>
+    <header class="site-header">
+        <div class="container nav-flex">
+             <div class="logo">Explore<span>SA</spanE> Events</div>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>   
+                </ul>
+            </nav>
+            <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Have a question about an event, or want to list your own? Send us a message.</p>
+
+            <div class="contact-layout">
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                <label for="subject">Subject <span class="required">*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="What is this about?">
+                </div>
+
+                <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" placeholder="Type your message..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div>
+                <div id="formSuccess" class="form-success" role="status" aria-live="polite"></div>
+            </form>
+
+            <aside class="contact-info">
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> info@explorasa.co.za</p>
+                <p><strong>Phone:</strong> +27 11 555 0123</p>
+                <p><strong>Address:</strong> 123 Main Street, Johannesburg, 2001</p>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjbCsDEyJzE0LjgiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1"
+                width="100%" height="220"
+                title="Map showing Explore SA Events office location"
+                allowfullscreen></iframe>
+            </aside>
             </div>
         </div>
-        <section>
-            <div class="container">
-                <h2>Why Explore SA?</h2>
-                <p>Explora SA connects local and tourists to the best activities,attractions and fetivals across Mzansi</p>
-
-                <div class="card-grid">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55e5?q=80&w=600" alt="Cape Town attractions">
-                        <div class="card-body">
-                            <h3>Iconic Attractions</h3>
-                            <p>Vist Table Mountain,Robben Island,and the candle of Humankind.</p>
-                            <button class="btn toggleBtn" data-targert="info1">Show More</button>
-                            <p id="info1" class="hidden">We partner with local tour guides t give you authentic experience.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=600" alt="South African culture festival">
-                        <div class="card-body">
-                            <h3>Cultural Festivals</h3>
-                            <p>Experience Jazz,Diwali,AfrikanBurn and mpre vibrent festivals.</p>
-                            <button class="btn toggleBtn" data-target="info2">Show More</button>
-                            <p id="info2" class="hidden">All our festivals celebrate South Africas diverse heritage.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="slides"><img src="https://images.unsplash.com/photo-1576485290814-1c72c0e5d217?q=80&w=800"alt="Slide 1 Cape Town"></div>
-                    <div class="slides"><img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?q=80&w=800" alt="Slide 2 Durbanbeach"></div>
-                    <div class="slides"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55e5?q=80&w=800" alt="Slide 3 Table Mountain"></div>
-                </div>
-            </div>
         </section>
-        <footer>
-            <div class="container">
-                <p>&copy; 2026 Explora SA Event| info@explorasa.co.za</p>
-                <p id="dateTime"></p>
-            </div>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+        <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
+        <p id="dateTime"></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
