@@ -3,68 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Explore SA Events</title>
+  <meta name="description" content="Explore SA Events promotes festivals, markets, sport and heritage events across South Africa.">
+  <title>About Us | Explore SA Events</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-flex">
-      <div class="logo">Explore<span>SA</span> Events</div>
-      <nav aria-label="Main navigation">
-        <ul>
+  <header id="site-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1 class="logo">Explore SA Events</h1>
+        <p class="tagline">Discover what is happening near you</p>
+      </div>
+      <div class="header-tools">
+        <p id="datetime" aria-live="off"></p>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
-    </div>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1>About Explore SA Events</h1>
-
-        <article class="about-article">
-          <h2>Our Mission</h2>
-          <p>To promote South African tourism by connecting people to authentic events, attractions, and community experiences.</p>
-      
-          <h2>What We Do</h2>
-          <ul>
-            <li>Curate upcoming events across all 9 provinces</li>
-            <li>Promote local businesses and cultural heritage</li>
-            <li>Provide accurate, up-to-date information</li>
-          </ul>
-
-          <h2>Our Values</h2>
-          <ol>
-            <li>Ubuntu - People first</li>
-            <li>Authenticity - Real South African experiences</li>
-            <li>Sustainability - Protecting our heritage</li>
-          </ol>
-        </article>
-
-        <div class="video-wrapper">
-          <h2>Watch: Beauty of South Africa</h2>
-          <iframe width="100%" height="350"
-            src="https://www.youtube.com/embed/cpmTqK0JZ0U"
-            title="South Africa video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+  <main id="content">
+    <section class="panel">
+      <h2>About Us</h2>
+      <p>Explore SA Events started as a small notice board in a community hall. Today it is a website that helps South Africans and visitors find local events and share them with friends.</p>
+      <p>We are run by volunteers who care about <em>culture, community and getting outside</em>.</p>
+      <button type="button" class="toggle-btn" data-toggle="story" aria-expanded="false" aria-controls="story">Read our story</button>
+      <div id="story" class="hidden-content" hidden>
+        <p>We began with a single weekend market and a printed list of stall holders. Word spread, more organisers asked to be added, and the list moved online. We now feature events from music nights to heritage walks.</p>
+        <p>Every event on the site is checked by a volunteer before it is published.</p>
       </div>
+    </section>
+
+    <section class="panel">
+      <h2>How we choose events</h2>
+      <ol>
+        <li>The organiser submits the event details.</li>
+        <li>A volunteer checks the date, venue and price.</li>
+        <li>We confirm that the event is safe and open to the public.</li>
+        <li>The event is added to the site and shared with our community.</li>
+      </ol>
+    </section>
+
+    <section class="panel">
+      <h2>Our team</h2>
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Events team</h3>
+          <p>Collects and checks every listing.</p>
+        </article>
+        <article class="info-card">
+          <h3>Community team</h3>
+          <p>Works with local organisers and volunteers.</p>
+        </article>
+        <article class="info-card">
+          <h3>Web team</h3>
+          <p>Builds and maintains this website.</p>
+        </article>
+      </div>
+      <hr>
+      <h3>Our values</h3>
+      <ul>
+        <li><strong>Local first:</strong> we back community organisers.</li>
+        <li><strong>Honest information:</strong> prices and dates are checked.</li>
+        <li><strong>Open to all:</strong> events for every budget.</li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
-      <p id="dateTime"></p>
-    </div>
+  <footer id="site-footer">
+    <p>&copy; 2026 Explore SA Events. All rights reserved. Events listed on this site are sample listings for a student project.</p>
+    <p>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="events.html">Events</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact Us</a>
+    </p>
+    <p>
+      Useful links:
+      <a href="https://www.southafrica.net" target="_blank" rel="noopener">South African Tourism</a> |
+      <a href="https://www.sanparks.org" target="_blank" rel="noopener">SANParks</a>
+    </p>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>
