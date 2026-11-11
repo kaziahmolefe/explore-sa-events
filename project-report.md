@@ -13,7 +13,7 @@
 | | | |
 
 ## 2. Project overview
-ExploreSA Events is an interactive web browser showcasing different events to explore, book tickets and confirm dates all across 9 provinces. The application features a welcome message, slideshow of popular events, dark mode,
+ExploreSA Events is an interactive web browser showcasing different events to explore, book tickets and confirm dates all across 9 provinces. The application features a welcome message, slideshow of popular events, dark mode, useful links and form validation.
 
 ## 3. Contribution of each group member
 
