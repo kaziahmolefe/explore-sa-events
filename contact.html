@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Explore SA Events</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore SA Events promotes festivals, markets, sport and heritage events across South Africa.">
+  <title>Contact Us | Explore SA Events</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
+  <header id="site-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1 class="logo">Explore SA Events</h1>
+        <p class="tagline">Discover what is happening near you</p>
+      </div>
+      <div class="header-tools">
+        <p id="datetime" aria-live="off"></p>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="site-header">
-        <div class="container nav-flex">
-             <div class="logo">Explore<span>SA</span> Events</div>
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active">Contact Us</a></li>   
-                </ul>
-            </nav>
-            <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
+  <main id="content">
+    <section class="panel">
+      <h2>Contact Us</h2>
+      <p>Questions about an event, or want to list your own? Send us a message and we will reply within one working day.</p>
+      <div class="two-col">
+        <div>
+          <h3>Send us a message</h3>
+          <form id="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Thandi Nkosi" autocomplete="name">
+            <span class="error" id="name-error" role="alert"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="e.g. thandi@example.com" autocomplete="email">
+            <span class="error" id="email-error" role="alert"></span>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="e.g. Listing my event">
+            <span class="error" id="subject-error" role="alert"></span>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write at least 10 characters"></textarea>
+            <span class="error" id="message-error" role="alert"></span>
+
+            <button type="submit" class="button">Send message</button>
+          </form>
+          <p id="form-success" class="success" role="status" hidden></p>
         </div>
-    </header>
-
-    <main>
-        <section class="section">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Have a question about an event, or want to list your own? Send us a message.</p>
-
-            <div class="contact-layout">
-            <form id="contactForm" novalidate>
-                <div class="form-group">
-                <label for="name">Name <span class="required">*</span></label>
-                <input type="text" id="name" name="name" placeholder="Your full name">
-                </div>
-
-                <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" placeholder="you@example.com">
-                </div>
-
-                <div class="form-group">
-                <label for="subject">Subject <span class="required">*</span></label>
-                <input type="text" id="subject" name="subject" placeholder="What is this about?">
-                </div>
-
-                <div class="form-group">
-                <label for="message">Message <span class="required">*</span></label>
-                <textarea id="message" name="message" rows="5" placeholder="Type your message..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Send Message</button>
-                <div id="formErrors" class="form-errors" role="alert" aria-live="assertive"></div>
-                <div id="formSuccess" class="form-success" role="status" aria-live="polite"></div>
-            </form>
-
-            <aside class="contact-info">
-                <h2>Get in Touch</h2>
-                <p><strong>Email:</strong> info@explorasa.co.za</p>
-                <p><strong>Phone:</strong> +27 11 555 0123</p>
-                <p><strong>Address:</strong> 123 Main Street, Johannesburg, 2001</p>
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjbCsDEyJzE0LjgiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1"
-                width="100%" height="220"
-                title="Map showing Explore SA Events office location"
-                allowfullscreen></iframe>
-            </aside>
-            </div>
+        <div>
+          <h3>Find us</h3>
+          <address>
+            <strong>Explore SA Events</strong><br>
+            25 Vilakazi Street, Johannesburg, 2001<br>
+            Email: <a href="mailto:info@exploresaevents.example">info@exploresaevents.example</a><br>
+            Phone: 011 000 0000
+          </address>
+          <p><strong>Office hours:</strong></p>
+          <ul>
+            <li>Monday to Friday: 08:00 to 17:00</li>
+            <li>Saturday: 09:00 to 13:00</li>
+          </ul>
+          <iframe title="Map showing central Johannesburg" class="map" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=27.99%2C-26.23%2C28.10%2C-26.17&amp;layer=mapnik&amp;marker=-26.2041%2C28.0473"></iframe>
+          <p><small>The map needs an internet connection to load.</small></p>
         </div>
-        </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <footer class="site-footer">
-        <div class="container">
-        <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
-        <p id="dateTime"></p>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+  <footer id="site-footer">
+    <p>&copy; 2026 Explore SA Events. All rights reserved. Events listed on this site are sample listings for a student project.</p>
+    <p>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="events.html">Events</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact Us</a>
+    </p>
+    <p>
+      Useful links:
+      <a href="https://www.southafrica.net" target="_blank" rel="noopener">South African Tourism</a> |
+      <a href="https://www.sanparks.org" target="_blank" rel="noopener">SANParks</a>
+    </p>
+  </footer>
 </body>
 </html>
