@@ -3,88 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - Explore SA Events</title>
+  <meta name="description" content="Explore SA Events promotes festivals, markets, sport and heritage events across South Africa.">
+  <title>Events | Explore SA Events</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="container nav-flex">
-      <div class="logo">Explore<span>SA</span> Events</div>
-      <nav aria-label="Main navigation">
-        <ul>
+  <header id="site-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1 class="logo">Explore SA Events</h1>
+        <p class="tagline">Discover what is happening near you</p>
+      </div>
+      <div class="header-tools">
+        <p id="datetime" aria-live="off"></p>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="events.html" class="active">Events</a></li>
+          <li><a href="events.html" class="active" aria-current="page">Events</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
-    </div>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1>Upcoming Events 2026</h1>
+  <main id="content">
+    <section class="panel">
+      <h2>Upcoming Events</h2>
+      <p>All prices are per person. Use the table to compare events or the cost calculator below to work out your total.</p>
+      <div class="table-wrap">
+        <table id="events-table">
+          <caption>Upcoming events, 2026 to 2027</caption>
+          <thead>
+            <tr><th scope="col">Event</th><th scope="col">City</th><th scope="col">Date</th><th scope="col">Category</th><th scope="col">Ticket price</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>Soweto Heritage Walk</td><td>Johannesburg</td><td>14 November 2026</td><td>Heritage</td><td>R120</td></tr>
+          <tr><td>Cape Town Food Market Festival</td><td>Cape Town</td><td>28 November 2026</td><td>Food</td><td>R80</td></tr>
+          <tr><td>Durban Beach Run</td><td>Durban</td><td>6 December 2026</td><td>Sport</td><td>R200</td></tr>
+          <tr><td>Pretoria Art in the Park</td><td>Pretoria</td><td>16 January 2027</td><td>Arts</td><td>R60</td></tr>
+          <tr><td>Karoo Stargazing Night</td><td>Graaff-Reinet</td><td>13 February 2027</td><td>Nature</td><td>R250</td></tr>
+          <tr><td>Jozi Music Fest</td><td>Johannesburg</td><td>6 March 2027</td><td>Music</td><td>R450</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-        <div class="table-wrapper">
-          <table class="events-table">
-            <caption>Major events across South Africa in 2026</caption>
-            <thead>
-              <tr>
-                <th scope="col">Event Name</th>
-                <th scope="col">Province</th>
-                <th scope="col">Date</th>
-                <th scope="col">Category</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Cape Town Jazz Festival</td><td>Western Cape</td><td>15&ndash;16 March</td><td>Music</td></tr>
-              <tr><td>Knysna Oyster Festival</td><td>Western Cape</td><td>21&ndash;30 June</td><td>Food</td></tr>
-              <tr><td>Durban July</td><td>KwaZulu-Natal</td><td>5 July</td><td>Sport</td></tr>
-              <tr><td>Soweto Wine Festival</td><td>Gauteng</td><td>12 Sept</td><td>Culture</td></tr>
-              <tr><td>AfrikaBurn</td><td>Northern Cape</td><td>27 Apr &ndash; 3 May</td><td>Art</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <section class="panel">
+      <h2>Browse by category</h2>
+      <label for="category-filter">Show events for:</label>
+      <select id="category-filter">
+        <option value="all">All categories</option>
+      </select>
+      <div id="event-cards" class="card-grid"></div>
+    </section>
 
-        <h2>Dynamic Events</h2>
-        <div id="dynamicEvents" class="card-grid"></div>
+    <section class="panel" id="calculator-section">
+      <h2>Event cost calculator</h2>
+      <p>Choose an event and the number of tickets. Groups of five or more get a 10% discount.</p>
+      <form id="calc-form" novalidate>
+        <label for="calc-event">Event</label>
+        <select id="calc-event" name="event"></select>
 
-        <div class="calc-box">
-          <h3>Event Cost Calculator</h3>
-          <label for="tickets">Number of Tickets:</label>
-          <input type="number" id="tickets" min="1" value="1">
-          <label for="eventPrice">Price per Ticket (R):</label>
-          <select id="eventPrice">
-            <option value="450">Soweto Wine &mdash; R450</option>
-            <option value="850">Jazz Fest &mdash; R850</option>
-            <option value="1200">Durban July &mdash; R1200</option>
-          </select>
-          <button id="calcBtn" class="btn btn-primary" type="button">Calculate</button>
-          <p id="calcResult" aria-live="polite"></p>
-        </div>
+        <label for="calc-tickets">Number of tickets (1 to 20)</label>
+        <input type="number" id="calc-tickets" name="tickets" min="1" max="20" value="1">
 
-        <div class="map-wrapper">
-          <h2>Find Us</h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjbCsDEyJzE0LjgiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1"
-            width="100%" height="300"
-            title="Map showing Explore SA Events location in Johannesburg"
-            allowfullscreen></iframe>
-        </div>
+        <fieldset>
+          <legend>Extras</legend>
+          <label class="check"><input type="checkbox" id="calc-meal"> Meal voucher (R75 per ticket)</label>
+          <label class="check"><input type="checkbox" id="calc-parking"> Parking (R40 per booking)</label>
+        </fieldset>
+
+        <button type="submit" class="button">Calculate total</button>
+      </form>
+      <div id="calc-result" class="result-box" role="status" aria-live="polite"></div>
+      <button type="button" class="button secondary" id="book-btn" hidden>Confirm booking</button>
+    </section>
+
+    <section class="panel">
+      <h2>Booking information</h2>
+      <button type="button" class="toggle-btn" data-toggle="booking-info" aria-expanded="false" aria-controls="booking-info">Show booking information</button>
+      <div id="booking-info" class="hidden-content" hidden>
+        <ol>
+          <li>Pick your event and work out the cost with the calculator.</li>
+          <li>Send us your details on the <a href="contact.html">Contact Us</a> page.</li>
+          <li>We reply within one working day with payment details.</li>
+          <li>Show your confirmation email at the gate.</li>
+        </ol>
       </div>
     </section>
   </main>
 
-    <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
-      <p id="dateTime"></p>
-    </div>
+  <footer id="site-footer">
+    <p>&copy; 2026 Explore SA Events. All rights reserved. Events listed on this site are sample listings for a student project.</p>
+    <p>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="events.html">Events</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact Us</a>
+    </p>
+    <p>
+      Useful links:
+      <a href="https://www.southafrica.net" target="_blank" rel="noopener">South African Tourism</a> |
+      <a href="https://www.sanparks.org" target="_blank" rel="noopener">SANParks</a>
+    </p>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>
