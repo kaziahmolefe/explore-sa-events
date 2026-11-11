@@ -3,94 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Explore SA Events</title>
+  <meta name="description" content="Explore SA Events promotes festivals, markets, sport and heritage events across South Africa.">
+  <title>Home | Explore SA Events</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
-<body id="home">
-
-  <header class="site-header">
-    <div class="container nav-flex">
-      <div class="logo">Explore<span>SA</span> Events</div>
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+<body class="home">
+  <header id="site-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1 class="logo">Explore SA Events</h1>
+        <p class="tagline">Discover what is happening near you</p>
+      </div>
+      <div class="header-tools">
+        <p id="datetime" aria-live="off"></p>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
-    </div>
+      </ul>
+    </nav>
   </header>
 
-  <div class="hero">
-    <div class="container">
-      <h1>Discover the Heart of South Africa</h1>
-      <p>From Table Mountain to Kruger Park &mdash; your adventure starts here.</p>
-      <a href="events.html" class="btn btn-primary">Explore Events</a>
-    </div>
-  </div>
-
-  <main>
-    <section class="section">
-      <div class="container">
-        <h2>Why Explore SA?</h2>
-        <p>Explore SA connects locals and tourists to the best activities, attractions and festivals across Mzansi.</p>
-
-        <div class="card-grid">
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"" alt="Cape Town attractions including Table Mountain">
-            <div class="card-body">
-              <h3>Iconic Attractions</h3>
-              <p>Visit Table Mountain, Robben Island, and the Cradle of Humankind.</p>
-              <button class="btn toggleBtn" data-target="info1" type="button">Show More</button>
-              <p id="info1" class="hidden">We partner with local tour guides to give you an authentic experience.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=600" alt="South African culture festival">
-            <div class="card-body">
-              <h3>Cultural Festivals</h3>
-              <p>Experience Jazz, Diwali, AfrikaBurn and more vibrant festivals.</p>
-              <button class="btn toggleBtn" data-target="info2" type="button">Show More</button>
-              <p id="info2" class="hidden">All our festivals celebrate South Africa's diverse heritage.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?q=80&w=600" alt="South African landscape at sunset">
-            <div class="card-body">
-              <h3>Natural Beauty</h3>
-              <p>Explore the landscapes, wildlife and coastlines that make South Africa unique.</p>
-              <button class="btn toggleBtn" data-target="info3" type="button">Show More</button>
-              <p id="info3" class="hidden">From the Drakensberg to the Garden Route, there's always somewhere new to discover.</p>
-            </div>
-          </article>
-        </div>
+  <main id="content">
+    <section class="slideshow" id="slideshow" aria-label="Featured events slideshow">
+      <div class="slides">
+        <figure class="slide active">
+          <img src="images/jozi-music-fest.jpg" alt="Stage lights over a music festival crowd">
+          <figcaption><strong>Jozi Music Fest</strong><br>Live music under the Johannesburg sky.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/food-festival.jpg" alt="Colourful food market stalls with string lights">
+          <figcaption><strong>Cape Town Food Market Festival</strong><br>Local flavours from over fifty stalls.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/stargazing.jpg" alt="Stars over the Karoo with a telescope">
+          <figcaption><strong>Karoo Stargazing Night</strong><br>See the Milky Way far from city lights.</figcaption>
+        </figure>
       </div>
+      <button type="button" class="slide-btn prev" id="prev-slide" aria-label="Previous slide">&#10094;</button>
+      <button type="button" class="slide-btn next" id="next-slide" aria-label="Next slide">&#10095;</button>
+      <div class="dots" id="slide-dots"></div>
     </section>
 
-    <section class="section section-alt">
-      <div class="container">
-        <h2>Featured Slideshow</h2>
-        <div class="slideshow" id="slideshow">
-          <div class="slide"><img src="https://images.unsplash.com/photo-1576485290814-1c72c0e5d217?q=80&w=800" alt="Cape Town city view"></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?q=80&w=800" alt="Durban beachfront"></div>
-          <div class="slide"><img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Table Mountain"></div>
-        </div>
-      </div>
+    <section class="panel intro">
+      <h2>Welcome to Explore SA Events</h2>
+      <p>We are a community organisation that promotes <strong>festivals, markets, sporting events and heritage activities</strong> across South Africa. Our goal is simple: help people find something worth leaving the house for.</p>
+      <p>Browse the upcoming events below, check the full <a href="events.html">events list</a> or look through our <a href="gallery.html">gallery</a> for a taste of what to expect.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Next up</h2>
+      <p>The three events coming up soonest:</p>
+      <div id="upcoming-list" class="card-grid"></div>
+      <p class="center"><a class="button" href="events.html">See all events</a></p>
+    </section>
+
+    <section class="panel">
+      <h2>Why use Explore SA Events?</h2>
+      <ul class="tick-list">
+        <li>Events in cities and small towns, not only the big venues</li>
+        <li>Clear prices and dates, with a cost calculator before you book</li>
+        <li>Family-friendly and budget-friendly options every month</li>
+        <li>Supported by local organisers and community volunteers</li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
-      <p id="dateTime"></p>
-    </div>
+  <footer id="site-footer">
+    <p>&copy; 2026 Explore SA Events. All rights reserved. Events listed on this site are sample listings for a student project.</p>
+    <p>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="events.html">Events</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact Us</a>
+    </p>
+    <p>
+      Useful links:
+      <a href="https://www.southafrica.net" target="_blank" rel="noopener">South African Tourism</a> |
+      <a href="https://www.sanparks.org" target="_blank" rel="noopener">SANParks</a>
+    </p>
   </footer>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
