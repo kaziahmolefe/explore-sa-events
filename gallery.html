@@ -3,55 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - Explore SA Events</title>
+  <meta name="description" content="Explore SA Events promotes festivals, markets, sport and heritage events across South Africa.">
+  <title>Gallery | Explore SA Events</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-
-  <header class="site-header">
-    <div class="container nav-flex">
-      <div class="logo">Explore<span>SA</span> Events</div>
-      <nav aria-label="Main navigation">
-        <ul>
+  <header id="site-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1 class="logo">Explore SA Events</h1>
+        <p class="tagline">Discover what is happening near you</p>
+      </div>
+      <div class="header-tools">
+        <p id="datetime" aria-live="off"></p>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="gallery.html" class="active" aria-current="page">Gallery</a></li>
           <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </nav>
-      <button id="darkModeToggle" class="btn btn-dark-toggle" type="button">Dark Mode</button>
-    </div>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h1>Gallery - Mzansi Moments</h1>
-        <p>Click any image to preview.</p>
-        <div class="preview-wrapper">
-            <img id="previewImage"
-               src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-               alt="Preview of selected gallery image">
-        </div>
-        <div class="gallery-grid">
-          <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=800" alt="Table Mountain Cape Town">
-          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?q=80&w=600" alt="Durban beachfront">
-          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?q=80&w=600" alt="Kruger wildlife safari">
-          <img src="https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?q=80&w=800" alt="Cape Town city view">
-          <img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?q=80&w=600" alt="Bo-Kaap colorful houses">
-          <img src="https://images.unsplash.com/photo-1484318571209-661cf29a69c3?q=80&w=600" alt="South Africa landscape">
-          </div>
+  <main id="content">
+    <section class="panel">
+      <h2>Gallery</h2>
+      <p>A look at the kind of events we promote. Choose a category to filter the pictures.</p>
+      <div class="filter-bar" id="gallery-filters" role="group" aria-label="Filter gallery by category">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="music">Music</button>
+        <button type="button" class="filter-btn" data-filter="food">Food</button>
+        <button type="button" class="filter-btn" data-filter="sport">Sport</button>
+        <button type="button" class="filter-btn" data-filter="heritage">Heritage</button>
+        <button type="button" class="filter-btn" data-filter="arts">Arts</button>
+        <button type="button" class="filter-btn" data-filter="nature">Nature</button>
+      </div>
+      <p id="gallery-count" role="status"></p>
+      <div class="gallery-grid" id="gallery-grid">
+        <figure class="gallery-item" data-category="music"><img src="images/jozi-music-fest.jpg" alt="Stage lights over a music festival crowd"><figcaption>Music festival crowd</figcaption></figure>
+        <figure class="gallery-item" data-category="food"><img src="images/food-festival.jpg" alt="Colourful food market stalls with string lights"><figcaption>Evening food market</figcaption></figure>
+        <figure class="gallery-item" data-category="sport"><img src="images/beach-run.jpg" alt="A runner on a beach in the morning"><figcaption>Morning beach run</figcaption></figure>
+        <figure class="gallery-item" data-category="heritage"><img src="images/heritage-walk.jpg" alt="Traditional homesteads at sunset"><figcaption>Heritage walk at sunset</figcaption></figure>
+        <figure class="gallery-item" data-category="arts"><img src="images/art-park.jpg" alt="An easel and paintings in a park"><figcaption>Art in the park</figcaption></figure>
+        <figure class="gallery-item" data-category="nature"><img src="images/stargazing.jpg" alt="Stars over the Karoo with a telescope"><figcaption>Stargazing in the Karoo</figcaption></figure>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Explore SA Events &nbsp;|&nbsp; info@explorasa.co.za</p>
-      <p id="dateTime"></p>
-    </div>
+  <footer id="site-footer">
+    <p>&copy; 2026 Explore SA Events. All rights reserved. Events listed on this site are sample listings for a student project.</p>
+    <p>
+      <a href="index.html">Home</a> | <a href="about.html">About Us</a> | <a href="events.html">Events</a> | <a href="gallery.html">Gallery</a> | <a href="contact.html">Contact Us</a>
+    </p>
+    <p>
+      Useful links:
+      <a href="https://www.southafrica.net" target="_blank" rel="noopener">South African Tourism</a> |
+      <a href="https://www.sanparks.org" target="_blank" rel="noopener">SANParks</a>
+    </p>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 </html>
